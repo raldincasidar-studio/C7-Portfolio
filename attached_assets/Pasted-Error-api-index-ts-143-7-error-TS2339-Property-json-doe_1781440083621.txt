@@ -1,0 +1,20 @@
+Error: api/index.ts(143,7): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(158,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(161,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(172,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(175,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(185,58): error TS2339: Property 'query' does not exist on type 'Request<core.ParamsDictionary, any, any, core.Query, Record<string, any>>'.
+api/index.ts(192,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(195,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(201,29): error TS2339: Property 'params' does not exist on type 'Request<core.ParamsDictionary, any, any, core.Query, Record<string, any>>'.
+api/index.ts(202,26): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(206,21): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(207,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(210,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(221,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(224,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(230,29): error TS2339: Property 'params' does not exist on type 'Request<core.ParamsDictionary, any, any, core.Query, Record<string, any>>'.
+api/index.ts(231,26): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(235,21): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(236,9): error TS2339: Property 'json' does not exist on type 'Response<any, Record<string, any>>'.
+api/index.ts(239,9): error TS2339: Property 'status' does not exist on type 'Response<any, Record<string, any>>'.

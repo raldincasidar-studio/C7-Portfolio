@@ -1,4 +1,4 @@
-import express, { type Request, type Response } from "express";
+import express from "express";
 import cors from "cors";
 import { MongoClient, type Db } from "mongodb";
 import { z } from "zod";
@@ -139,13 +139,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // ─── Health ───────────────────────────────────────────────────────────────────
 
-app.get("/api/healthz", (_req: Request, res: Response) => {
+app.get("/api/healthz", (_req, res) => {
   res.json({ status: "ok" });
 });
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 
-app.get("/api/stats", async (req: Request, res: Response) => {
+app.get("/api/stats", async (req, res) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -164,7 +164,7 @@ app.get("/api/stats", async (req: Request, res: Response) => {
 
 // ─── Categories ───────────────────────────────────────────────────────────────
 
-app.get("/api/categories", async (req: Request, res: Response) => {
+app.get("/api/categories", async (req, res) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -178,7 +178,7 @@ app.get("/api/categories", async (req: Request, res: Response) => {
 
 // ─── Products ─────────────────────────────────────────────────────────────────
 
-app.get("/api/products", async (req: Request, res: Response) => {
+app.get("/api/products", async (req, res) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -196,7 +196,7 @@ app.get("/api/products", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/api/products/:id", async (req: Request, res: Response) => {
+app.get("/api/products/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
@@ -213,7 +213,7 @@ app.get("/api/products/:id", async (req: Request, res: Response) => {
 
 // ─── Locations ────────────────────────────────────────────────────────────────
 
-app.get("/api/locations", async (req: Request, res: Response) => {
+app.get("/api/locations", async (req, res) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -225,7 +225,7 @@ app.get("/api/locations", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/api/locations/:id", async (req: Request, res: Response) => {
+app.get("/api/locations/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
@@ -242,7 +242,7 @@ app.get("/api/locations/:id", async (req: Request, res: Response) => {
 
 // ─── Jobs ─────────────────────────────────────────────────────────────────────
 
-app.get("/api/jobs", async (req: Request, res: Response) => {
+app.get("/api/jobs", async (req, res) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -256,7 +256,7 @@ app.get("/api/jobs", async (req: Request, res: Response) => {
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
 
-app.post("/api/contact", async (req: Request, res: Response) => {
+app.post("/api/contact", async (req, res) => {
   try {
     const parsed = SubmitContactSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -276,7 +276,7 @@ app.post("/api/contact", async (req: Request, res: Response) => {
 
 // ─── Orders ───────────────────────────────────────────────────────────────────
 
-app.post("/api/orders", async (req: Request, res: Response) => {
+app.post("/api/orders", async (req, res) => {
   try {
     const parsed = CreateOrderSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -304,7 +304,7 @@ app.post("/api/orders", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/api/orders/:id", async (req: Request, res: Response) => {
+app.get("/api/orders/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
