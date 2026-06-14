@@ -139,13 +139,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // ─── Health ───────────────────────────────────────────────────────────────────
 
-app.get("/api/healthz", (_req, res) => {
+app.get("/api/healthz", (_req: express.Request, res: express.Response) => {
   res.json({ status: "ok" });
 });
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 
-app.get("/api/stats", async (req, res) => {
+app.get("/api/stats", async (req: express.Request, res: express.Response) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -164,7 +164,7 @@ app.get("/api/stats", async (req, res) => {
 
 // ─── Categories ───────────────────────────────────────────────────────────────
 
-app.get("/api/categories", async (req, res) => {
+app.get("/api/categories", async (req: express.Request, res: express.Response) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -178,7 +178,7 @@ app.get("/api/categories", async (req, res) => {
 
 // ─── Products ─────────────────────────────────────────────────────────────────
 
-app.get("/api/products", async (req, res) => {
+app.get("/api/products", async (req: express.Request, res: express.Response) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -196,9 +196,9 @@ app.get("/api/products", async (req, res) => {
   }
 });
 
-app.get("/api/products/:id", async (req, res) => {
+app.get("/api/products/:id", async (req: express.Request, res: express.Response) => {
   try {
-    const id = parseInt(req.params.id, 10);
+    const id = parseInt(req.params.id as string, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
     const db = await getDb();
     await seedIfEmpty(db);
@@ -213,7 +213,7 @@ app.get("/api/products/:id", async (req, res) => {
 
 // ─── Locations ────────────────────────────────────────────────────────────────
 
-app.get("/api/locations", async (req, res) => {
+app.get("/api/locations", async (req: express.Request, res: express.Response) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -225,9 +225,9 @@ app.get("/api/locations", async (req, res) => {
   }
 });
 
-app.get("/api/locations/:id", async (req, res) => {
+app.get("/api/locations/:id", async (req: express.Request, res: express.Response) => {
   try {
-    const id = parseInt(req.params.id, 10);
+    const id = parseInt(req.params.id as string, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
     const db = await getDb();
     await seedIfEmpty(db);
@@ -242,7 +242,7 @@ app.get("/api/locations/:id", async (req, res) => {
 
 // ─── Jobs ─────────────────────────────────────────────────────────────────────
 
-app.get("/api/jobs", async (req, res) => {
+app.get("/api/jobs", async (req: express.Request, res: express.Response) => {
   try {
     const db = await getDb();
     await seedIfEmpty(db);
@@ -256,7 +256,7 @@ app.get("/api/jobs", async (req, res) => {
 
 // ─── Contact ──────────────────────────────────────────────────────────────────
 
-app.post("/api/contact", async (req, res) => {
+app.post("/api/contact", async (req: express.Request, res: express.Response) => {
   try {
     const parsed = SubmitContactSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -276,7 +276,7 @@ app.post("/api/contact", async (req, res) => {
 
 // ─── Orders ───────────────────────────────────────────────────────────────────
 
-app.post("/api/orders", async (req, res) => {
+app.post("/api/orders", async (req: express.Request, res: express.Response) => {
   try {
     const parsed = CreateOrderSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -304,9 +304,9 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
-app.get("/api/orders/:id", async (req, res) => {
+app.get("/api/orders/:id", async (req: express.Request, res: express.Response) => {
   try {
-    const id = parseInt(req.params.id, 10);
+    const id = parseInt(req.params.id as string, 10);
     if (isNaN(id)) { res.status(400).json({ error: "Invalid id" }); return; }
     const db = await getDb();
     const order = await db.collection("orders").findOne({ id }, { projection: { _id: 0 } });
