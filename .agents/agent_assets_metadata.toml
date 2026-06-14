@@ -36,3 +36,27 @@ id = "joYSsgHXzd9VXl-lJIbA1"
 uri = "file://artifacts/c7-store/src/assets/images/contact-hero.png"
 type = "image"
 title = "Contact desk"
+
+[[generated]]
+id = "W3yQGYr0hfXxoamhAk7JL"
+uri = "file://artifacts/c7-store/public/products/coca-cola-500ml.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "PGv_qCOnoHOYY6BscBIJg"
+uri = "file://artifacts/c7-store/public/products/piattos-cheese-85g.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "BTid25UIA8c8DV_0Fg01_"
+uri = "file://artifacts/c7-store/public/products/minute-maid-orange-350ml.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WaXz-TGfAB2oTQbyXAEI6"
+uri = "file://artifacts/c7-store/public/products/nova-country-cheddar-78g.png"
+type = "image"
+title = "generated_image"

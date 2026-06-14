@@ -100,7 +100,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <Logo size={48} />
+              <Logo size={56} />
             </Link>
             <p className="text-zinc-400 mb-6 max-w-sm">
               C7 Convenience Store — Your Neighborhood's 24/7 Choice. Always Open. Always Near. Always C7.
