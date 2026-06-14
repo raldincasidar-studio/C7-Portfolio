@@ -1,0 +1,1 @@
+- [Vercel + MongoDB Migration](vercel-mongodb-migration.md) — project migrated from PostgreSQL/Drizzle to MongoDB Atlas; single API file pattern for Vercel serverless.
