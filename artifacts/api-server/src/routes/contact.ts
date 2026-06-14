@@ -1,22 +1,32 @@
 import { Router } from "express";
-import { db, contactMessagesTable } from "@workspace/db";
-import { SubmitContactBody } from "@workspace/api-zod";
+import { z } from "zod";
+import { getDb, seedIfEmpty, nextId } from "../lib/mongodb";
 
 const router = Router();
 
+const SubmitContactSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  subject: z.string().min(1),
+  message: z.string().min(1),
+});
+
 router.post("/contact", async (req, res) => {
   try {
-    const parsed = SubmitContactBody.safeParse(req.body);
+    const parsed = SubmitContactSchema.safeParse(req.body);
     if (!parsed.success) {
       res.status(400).json({ error: "Validation failed", details: parsed.error.issues });
       return;
     }
 
-    await db.insert(contactMessagesTable).values({
-      name: parsed.data.name,
-      email: parsed.data.email,
-      subject: parsed.data.subject,
-      message: parsed.data.message,
+    const db = await getDb();
+    await seedIfEmpty(db);
+
+    const id = await nextId(db, "contacts");
+    await db.collection("contactMessages").insertOne({
+      id,
+      ...parsed.data,
+      createdAt: new Date(),
     });
 
     res.status(201).json({ success: true, message: "Thank you! We will get back to you soon." });

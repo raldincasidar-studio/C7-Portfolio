@@ -1,18 +1,14 @@
 import { Router } from "express";
-import { db, locationsTable } from "@workspace/db";
-import { eq } from "drizzle-orm";
+import { getDb, seedIfEmpty } from "../lib/mongodb";
 
 const router = Router();
 
 router.get("/locations", async (req, res) => {
   try {
-    const rows = await db.select().from(locationsTable);
-    const locations = rows.map((r) => ({
-      ...r,
-      lat: r.lat ? parseFloat(r.lat) : null,
-      lng: r.lng ? parseFloat(r.lng) : null,
-    }));
-    res.json(locations);
+    const db = await getDb();
+    await seedIfEmpty(db);
+    const rows = await db.collection("locations").find({}, { projection: { _id: 0 } }).toArray();
+    res.json(rows);
   } catch (err) {
     req.log.error({ err }, "listLocations error");
     res.status(500).json({ error: "Internal server error" });
@@ -27,22 +23,15 @@ router.get("/locations/:id", async (req, res) => {
       return;
     }
 
-    const rows = await db
-      .select()
-      .from(locationsTable)
-      .where(eq(locationsTable.id, id));
+    const db = await getDb();
+    await seedIfEmpty(db);
 
-    if (!rows[0]) {
+    const row = await db.collection("locations").findOne({ id }, { projection: { _id: 0 } });
+    if (!row) {
       res.status(404).json({ error: "Not found" });
       return;
     }
-
-    const r = rows[0];
-    res.json({
-      ...r,
-      lat: r.lat ? parseFloat(r.lat) : null,
-      lng: r.lng ? parseFloat(r.lng) : null,
-    });
+    res.json(row);
   } catch (err) {
     req.log.error({ err }, "getLocation error");
     res.status(500).json({ error: "Internal server error" });

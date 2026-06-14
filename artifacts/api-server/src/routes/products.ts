@@ -1,38 +1,33 @@
 import { Router } from "express";
-import { db, productsTable } from "@workspace/db";
-import { eq, ilike, and, type SQL } from "drizzle-orm";
-import { ListProductsQueryParams } from "@workspace/api-zod";
+import { z } from "zod";
+import { getDb, seedIfEmpty } from "../lib/mongodb";
 
 const router = Router();
 
+const ListProductsQuerySchema = z.object({
+  categoryId: z.coerce.number().int().optional(),
+  featured: z
+    .union([z.literal("true"), z.literal("false")])
+    .transform((v) => v === "true")
+    .optional(),
+  search: z.string().optional(),
+});
+
 router.get("/products", async (req, res) => {
   try {
-    const parsed = ListProductsQueryParams.safeParse(req.query);
+    const db = await getDb();
+    await seedIfEmpty(db);
+
+    const parsed = ListProductsQuerySchema.safeParse(req.query);
     const params = parsed.success ? parsed.data : {};
 
-    const conditions: SQL[] = [];
+    const filter: Record<string, unknown> = {};
+    if (params.categoryId != null) filter.categoryId = params.categoryId;
+    if (params.featured != null) filter.featured = params.featured;
+    if (params.search) filter.name = { $regex: params.search, $options: "i" };
 
-    if (params.categoryId != null) {
-      conditions.push(eq(productsTable.categoryId, params.categoryId));
-    }
-    if (params.featured != null) {
-      conditions.push(eq(productsTable.featured, params.featured));
-    }
-    if (params.search) {
-      conditions.push(ilike(productsTable.name, `%${params.search}%`));
-    }
-
-    const rows = await db
-      .select()
-      .from(productsTable)
-      .where(conditions.length > 0 ? and(...conditions) : undefined);
-
-    const products = rows.map((r) => ({
-      ...r,
-      price: parseFloat(r.price),
-    }));
-
-    res.json(products);
+    const rows = await db.collection("products").find(filter, { projection: { _id: 0 } }).toArray();
+    res.json(rows);
   } catch (err) {
     req.log.error({ err }, "listProducts error");
     res.status(500).json({ error: "Internal server error" });
@@ -47,17 +42,15 @@ router.get("/products/:id", async (req, res) => {
       return;
     }
 
-    const rows = await db
-      .select()
-      .from(productsTable)
-      .where(eq(productsTable.id, id));
+    const db = await getDb();
+    await seedIfEmpty(db);
 
-    if (!rows[0]) {
+    const row = await db.collection("products").findOne({ id }, { projection: { _id: 0 } });
+    if (!row) {
       res.status(404).json({ error: "Not found" });
       return;
     }
-
-    res.json({ ...rows[0], price: parseFloat(rows[0].price) });
+    res.json(row);
   } catch (err) {
     req.log.error({ err }, "getProduct error");
     res.status(500).json({ error: "Internal server error" });

@@ -1,25 +1,21 @@
 import { Router } from "express";
-import { db, productsTable, categoriesTable, locationsTable } from "@workspace/db";
-import { eq, count } from "drizzle-orm";
+import { getDb, seedIfEmpty } from "../lib/mongodb";
 
 const router = Router();
 
 router.get("/stats", async (req, res) => {
   try {
-    const [totalProducts] = await db.select({ count: count() }).from(productsTable);
-    const [totalLocations] = await db.select({ count: count() }).from(locationsTable);
-    const [totalCategories] = await db.select({ count: count() }).from(categoriesTable);
-    const [featuredProductCount] = await db
-      .select({ count: count() })
-      .from(productsTable)
-      .where(eq(productsTable.featured, true));
+    const db = await getDb();
+    await seedIfEmpty(db);
 
-    res.json({
-      totalProducts: Number(totalProducts.count),
-      totalLocations: Number(totalLocations.count),
-      totalCategories: Number(totalCategories.count),
-      featuredProductCount: Number(featuredProductCount.count),
-    });
+    const [totalProducts, totalLocations, totalCategories, featuredProductCount] = await Promise.all([
+      db.collection("products").countDocuments(),
+      db.collection("locations").countDocuments(),
+      db.collection("categories").countDocuments(),
+      db.collection("products").countDocuments({ featured: true }),
+    ]);
+
+    res.json({ totalProducts, totalLocations, totalCategories, featuredProductCount });
   } catch (err) {
     req.log.error({ err }, "getStats error");
     res.status(500).json({ error: "Internal server error" });

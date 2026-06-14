@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { db, categoriesTable } from "@workspace/db";
+import { getDb, seedIfEmpty } from "../lib/mongodb";
 
 const router = Router();
 
 router.get("/categories", async (req, res) => {
   try {
-    const rows = await db.select().from(categoriesTable);
+    const db = await getDb();
+    await seedIfEmpty(db);
+    const rows = await db.collection("categories").find({}, { projection: { _id: 0 } }).toArray();
     res.json(rows);
   } catch (err) {
     req.log.error({ err }, "listCategories error");
