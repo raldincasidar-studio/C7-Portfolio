@@ -14,6 +14,8 @@ All API endpoints live in a single file `artifacts/c7-store/api/index.ts` (Verce
 - Local dev: `artifacts/api-server/src/lib/mongodb.ts` handles connection + seeding; route files import from it.
 - Vercel prod: `artifacts/c7-store/api/index.ts` is the single self-contained Express handler; `vercel.json` rewrites `/api/:path*` → `/api/index`.
 - MONGODB_URI is stored as a Replit Secret (shared environment). MongoDB db name: `c7store`.
+- Seed script: `artifacts/c7-store/scripts/seed.ts` — run with `pnpm run seed` from c7-store. Drops all collections and re-inserts 7 categories, 22 products with `/products/*.jpg|png` image URLs, 8 real CDO locations, 2 jobs.
+- Product images live in `artifacts/c7-store/public/products/` and are served at `/products/<filename>` by both Vite dev server and Vercel static output.
 - Auto-seeding: `seedIfEmpty()` inserts categories, products, locations, jobs on first connect (checks `categories` collection count).
 - Auto-increment IDs: `nextId(db, name)` uses a `counters` collection with `$inc`.
 - Vercel project root directory should be set to `artifacts/c7-store` in Vercel dashboard.
