@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "t4n2LkE6jPfBQwcC7OWjJ"
+uri = "file://artifacts/c7-store/src/assets/images/home-hero.png"
+type = "image"
+title = "Home hero interior"
+
+[[generated]]
+id = "13fkpVKKYZRXQWMEARquR"
+uri = "file://artifacts/c7-store/src/assets/images/about-hero.png"
+type = "image"
+title = "About team photo"
+
+[[generated]]
+id = "6V4Rx8I2FfPtD5JjMlzn-"
+uri = "file://artifacts/c7-store/src/assets/images/products-hero.png"
+type = "image"
+title = "Products shelves"
+
+[[generated]]
+id = "WhR_HohHS3jyrP9P7HfBz"
+uri = "file://artifacts/c7-store/src/assets/images/locations-hero.png"
+type = "image"
+title = "Locations exterior"
+
+[[generated]]
+id = "dEwWQ5-xwGit1RvgWo-IB"
+uri = "file://artifacts/c7-store/src/assets/images/careers-hero.png"
+type = "image"
+title = "Careers employee"
+
+[[generated]]
+id = "joYSsgHXzd9VXl-lJIbA1"
+uri = "file://artifacts/c7-store/src/assets/images/contact-hero.png"
+type = "image"
+title = "Contact desk"

@@ -1,0 +1,519 @@
+C7 Convenience Store Website Development Prompt for AI Agentic Coder
+
+This document outlines the comprehensive requirements for developing the C7 Convenience Store website. The goal is to create a fully functional, responsive, and branded e-commerce platform that effectively showcases C7 Convenience Store's offerings, locations, and community commitment in Cagayan de Oro.
+
+1. Project Overview
+
+Develop a modern, user-friendly website for C7 Convenience Store, incorporating online shopping capabilities, a detailed store locator, and a strong brand presence. The website must be responsive across all devices, with a focus on mobile-first optimization after initial desktop implementation.
+
+2. Website Content & Structure
+
+Refer to the C7_Convenience_Store_Website_Copy.md document for all textual content, page structure, and specific asset placement instructions. This document details six primary pages: Home, About Us, Locations, Products, Careers, and Contact.
+
+3. Branding Guidelines
+
+Adherence to C7 Convenience Store's visual identity is paramount. The AI agent must strictly follow these guidelines:
+
+3.1. Color Palette
+
+•
+Primary Brand Color: A vibrant, fresh green (e.g., #66CC00). This color should be used for primary calls-to-action, key headings, and elements requiring emphasis.
+
+•
+Secondary Accent Color: Clean white (#FFFFFF) for backgrounds, text on dark elements, and general contrast.
+
+•
+Neutral Tones: Utilize shades of grey for text, borders, and subtle background elements to maintain a clean and modern aesthetic.
+
+•
+Dark Grey for primary text: #333333
+
+•
+Medium Grey for secondary text/icons: #666666
+
+•
+Light Grey for backgrounds/borders: #EEEEEE
+
+
+
+3.2. Typography
+
+•
+Primary Font: A modern, clean, and highly readable sans-serif typeface (e.g., 'Roboto', 'Open Sans', 'Lato'). Use for body text and general content.
+
+•
+Secondary Font: A slightly bolder or distinct sans-serif for headlines and call-to-action elements (e.g., 'Montserrat', 'Oswald'). This creates visual hierarchy and brand recognition.
+
+3.3. Logo Style
+
+•
+The C7 logo features a distinct diamond shape, primarily in the vibrant green, with the letter 'C' and the number '7' integrated within it. The overall style is modern, simple, and easily recognizable.
+
+•
+The logo must be prominently displayed in the header (left-aligned) and footer. Ensure proper scaling and clear visibility across all device sizes.
+
+3.4. Imagery Style
+
+•
+General: Bright, clean, well-lit photos of store interiors, product displays, and friendly staff. Emphasize a welcoming and organized environment.
+
+•
+Lifestyle: Images featuring people enjoying products or interacting with the store in a positive, convenient manner, reflecting the local Cagayan de Oro community.
+
+•
+Product Photography: Clear, high-resolution images of products, especially for the online shopping section. Consistency in lighting and background is crucial.
+
+4. Technical Requirements
+
+4.1. Responsive Design
+
+•
+The website must be fully responsive, adapting seamlessly to various screen sizes (desktops, tablets, mobile phones).
+
+•
+Development Approach: Implement the desktop version first, then rigorously optimize and refine for mobile devices, ensuring a mobile-first user experience.
+
+4.2. Online Shopping (E-commerce Integration)
+
+•
+Implement a robust e-commerce system allowing customers to browse products, add items to a cart, and complete secure purchases.
+
+•
+Features: Product listings with images, descriptions, pricing, quantity selection, shopping cart functionality, secure checkout process, order confirmation.
+
+•
+Product Data: The system should be capable of handling product categories, search functionality, and inventory management (even if initially placeholder data).
+
+4.3. Store Locations & Interactive Map
+
+•
+Integrate an interactive map (e.g., Google Maps API) on the
+Locations page, allowing users to easily find branches. Each branch listing should link to its location on the map.
+
+4.4. Performance & SEO
+
+•
+Optimize for fast loading times and smooth user experience.
+
+•
+Implement basic SEO best practices (semantic HTML, meta tags, friendly URLs).
+
+4.5. Security
+
+•
+Ensure secure data handling for online transactions and user information.
+
+•
+Implement HTTPS.
+
+5. UI/UX Design Guidelines
+
+5.1. Layout & Spacing
+
+•
+Clean and Uncluttered: Utilize ample white space to improve readability and focus on content.
+
+•
+Grid-based Layouts: Employ consistent grid systems for structured and organized content presentation.
+
+•
+Visual Hierarchy: Clearly differentiate primary, secondary, and tertiary information through size, color, and placement.
+
+5.2. Color Usage
+
+•
+Strictly adhere to the defined color palette. The vibrant green should be used strategically to highlight key elements and calls-to-action, not to overwhelm the design.
+
+•
+Ensure sufficient color contrast for accessibility (WCAG 2.1 AA standards).
+
+5.3. Shadow Rules
+
+•
+Use subtle shadows for depth and emphasis on interactive elements (buttons, cards, modals) to indicate interactivity and hierarchy.
+
+•
+Avoid heavy or distracting shadows. A consistent, light shadow style should be applied throughout the site.
+
+5.4. Focus on User Experience (UX)
+
+•
+Intuitive Navigation: Clear and consistent navigation across all pages. Users should easily understand where they are and how to get to other sections.
+
+•
+Ease of Use: Simple and straightforward interactions, especially for the online shopping and checkout process.
+
+•
+Feedback: Provide clear visual feedback for user actions (e.g., button hovers, form submissions).
+
+•
+Accessibility: Design with accessibility in mind, ensuring the site is usable by a wide range of users.
+
+5.5. Funnel Focus for Sales & Branding
+
+•
+Homepage: Designed to quickly engage users, highlight key offerings (24/7, locations, products), and guide them towards product browsing or location finding.
+
+•
+Product Pages: Clear product information, high-quality images, easy "Add to Cart" functionality, and related product suggestions to encourage purchases.
+
+•
+Checkout Process: Streamlined and intuitive, minimizing steps and distractions to reduce cart abandonment.
+
+•
+Branding Reinforcement: Consistent use of logo, colors, and tone across all pages to reinforce brand identity and trust.
+
+6. Development Workflow
+
+1.
+Desktop Version First: Develop the full website functionality and design for desktop screens.
+
+2.
+Mobile-First Optimization: After desktop implementation, thoroughly review and optimize the entire website for mobile devices, ensuring an excellent user experience on smaller screens.
+
+3.
+Testing: Implement rigorous testing for functionality, responsiveness, cross-browser compatibility, and performance.
+
+7. Deliverables
+
+•
+Fully functional and responsive website code.
+
+•
+Integration of online shopping capabilities.
+
+•
+Implementation of the interactive store locator.
+
+•
+Adherence to all specified branding and UI/UX guidelines.
+
+•
+A brief report on the development process and any deviations or challenges encountered.
+
+Note to AI Agentic Coder: Strict adherence to these guidelines is essential. The website must not only be functional but also visually appealing and consistent with the C7 Convenience Store brand identity.
+
+C7 Convenience Store Branding Elements
+
+Based on visual analysis of C7 Convenience Store's Facebook page and associated imagery, the following branding elements are identified for website development:
+
+1. Color Palette
+
+•
+Primary Brand Color: A vibrant, fresh green (similar to a lime green or bright emerald). This color is prominent in the C7 logo and is associated with freshness, energy, and growth.
+
+•
+Suggested Hex Code (to be confirmed with actual brand assets): #66CC00 (example, adjust as needed)
+
+
+
+•
+Secondary Accent Color: A clean, bright white, used for backgrounds, text, and to provide contrast.
+
+•
+Suggested Hex Code: #FFFFFF
+
+
+
+•
+Neutral Tones: Various shades of grey for text, borders, and subtle background elements to maintain a modern and clean aesthetic.
+
+•
+Suggested Hex Codes: #333333 (dark grey for primary text), #666666 (medium grey for secondary text), #EEEEEE (light grey for backgrounds/borders)
+
+
+
+2. Typography
+
+•
+Primary Font: A modern, clean, and highly readable sans-serif typeface. This aligns with the convenience store's practical and efficient image.
+
+•
+Suggested Font Families: 'Roboto', 'Open Sans', 'Lato', or similar web-safe sans-serif fonts.
+
+
+
+•
+Secondary Font: A slightly bolder or distinct sans-serif for headlines and call-to-action elements to create visual hierarchy.
+
+•
+Suggested Font Families: 'Montserrat', 'Oswald', or similar.
+
+
+
+3. Logo Style
+
+•
+Description: The C7 logo features a distinct diamond shape, primarily in the vibrant green, with
+the letter 'C' and the number '7' integrated within it. The overall style is modern, simple, and easily recognizable.
+
+•
+Usage: The logo should be prominently displayed in the header and footer, and potentially as a favicon. Variations (e.g., monochrome) should be available for different backgrounds.
+
+4. Imagery Style
+
+•
+General: Bright, clean, well-lit photos of store interiors, product displays, and friendly staff. Emphasize a welcoming and organized environment.
+
+•
+Lifestyle: Images featuring people enjoying products or interacting with the store in a positive, convenient manner. Focus on the local Cagayan de Oro community.
+
+•
+Product Photography: Clear, high-resolution images of products, especially for the online shopping section. Consistency in lighting and background is crucial.
+
+5. Overall Aesthetic
+
+•
+Clean and Modern: A minimalist approach with clear layouts and ample white space to ensure readability and ease of navigation.
+
+•
+Energetic: The use of the primary green color should convey freshness and vitality without being overwhelming.
+
+•
+Local Touch: Incorporate subtle elements that resonate with the Cagayan de Oro identity, such as local landmarks in background imagery or local product highlights.
+
+
+
+Copywrite inside the website (You must use this):
+
+C7 Convenience Store: Website Copywriting & Architecture Guide
+
+This document contains the complete website architecture, copywriting, and asset placement instructions for the C7 Convenience Store website. The content is designed to highlight the brand's 24/7 reliability, extensive local presence in Cagayan de Oro, and commitment to the community.
+
+
+
+
+Global Elements (Header & Footer)
+
+Header Navigation
+
+[Asset Instruction: Place the primary C7 Diamond Logo on the far left of the navigation bar.]
+
+•
+Home
+
+•
+About Us
+
+•
+Locations
+
+•
+Products
+
+•
+Careers
+
+•
+Contact
+
+Footer
+
+[Asset Instruction: Place a monochrome or simplified version of the C7 Logo. Include social media icons for Facebook, Instagram, and TikTok.]
+Copy:
+C7 Convenience Store — Your Neighborhood's 24/7 Choice.
+Proudly serving Cagayan de Oro City.
+© 2026 C7 Convenience Store. All rights reserved.
+
+
+
+
+Page 1: Home
+
+Hero Section
+
+[Asset Instruction: Use a high-quality, wide-angle lifestyle image of a brightly lit C7 Convenience Store at night, showcasing the "Always Open" vibe. Overlay the text on a dark gradient for readability.]
+
+Headline: Always Open. Always Near. Always C7.
+Sub-headline: Your trusted 24/7 neighborhood convenience store in Cagayan de Oro. From late-night cravings to early morning essentials, we are here when you need us most.
+Call-to-Action (CTA) Button: Find Your Nearest Branch
+
+Section 2: Why Choose C7?
+
+[Asset Instruction: Use a three-column layout. Place a custom icon above each paragraph: a clock for 24/7, a map pin for locations, and a shopping basket for products.]
+
+Column 1: 24/7 Reliability
+We understand that life in CDO does not stop when the sun goes down. That is why our doors remain open 24 hours a day, 7 days a week. Whether you are finishing a late shift or starting an early journey, C7 is ready to serve you.
+
+Column 2: Right in Your Neighborhood
+With multiple branches strategically located across Cagayan de Oro—from Divisoria to Uptown—you are never too far from a C7 Convenience Store. We bring everyday essentials closer to your doorstep.
+
+Column 3: Everything You Need
+From refreshing beverages and quick snacks to daily household necessities, our shelves are fully stocked. We also partner with local food brands to bring you the best of CDO's flavors right inside our stores.
+
+Section 3: Featured Locations
+
+[Asset Instruction: Display a carousel or grid of high-quality storefront images featuring the Divisoria, Nazareth, and Uptown branches.]
+
+Headline: Find Us Across the City of Golden Friendship
+Body: Explore our growing network of stores designed to serve the vibrant communities of Cagayan de Oro.
+CTA Button: View All Locations
+
+
+
+
+Page 2: About Us
+
+Hero Section
+
+[Asset Instruction: Use an image of the C7 team or a bustling store interior during the day.]
+
+Headline: The C7 Story: Rooted in CDO
+Sub-headline: Building a legacy of convenience, one neighborhood at a time.
+
+Section 2: Our Mission & Vision
+
+[Asset Instruction: Use a split layout with text on one side and a graphic or image of the C7 storefront on the other.]
+
+Our Mission
+To provide the people of Cagayan de Oro with unparalleled convenience through accessible locations, round-the-clock service, and a comprehensive selection of quality products. We strive to be the reliable neighbor you can always count on.
+
+Our Vision
+To be the leading local convenience store chain in Northern Mindanao, recognized for our commitment to community growth, exceptional customer service, and continuous expansion.
+
+Section 3: Community First
+
+[Asset Instruction: Include images of local CDO landmarks or community events.]
+
+Body:
+C7 Convenience Store is more than just a place to buy groceries; we are a proud part of the Cagayan de Oro community. By employing local talent and partnering with homegrown businesses, we ensure that every purchase supports the local economy. We are committed to growing alongside the City of Golden Friendship.
+
+
+
+
+Page 3: Locations & Branches
+
+Hero Section
+
+[Asset Instruction: Use a stylized map graphic of Cagayan de Oro with C7 map pins scattered across the city.]
+
+Headline: Find a C7 Near You
+Sub-headline: With branches across CDO, convenience is always just around the corner.
+
+Section 2: Branch Directory
+
+[Asset Instruction: Present this information in a clean, interactive list or grid. Include a "Get Directions" button for each that links to Google Maps or Waze.]
+
+Tomas Saco (Nazareth)
+Address: Tomas Saco Corner 8th Street, Nazareth, Cagayan de Oro
+Landmark: Across City Central School
+Hours: Open 24/7
+
+Velez
+Address: Don Apolinar Velez Street corner Cruz Taal Street, Cagayan de Oro
+Landmark: Near MOGCHS
+Hours: Open 24/7
+
+Corrales
+Address: Corrales Avenue, Cagayan de Oro
+Landmark: Beside 24 Chicken and D Claw Restaurant
+Hours: Open 24/7
+
+Divisoria
+Address: Tirso Neri Street, Divisoria Park, Cagayan de Oro
+Landmark: Beside DBP
+Hours: Open 24/7
+
+Masterson Avenue (Uptown)
+Address: Masterson Avenue, Cagayan de Oro
+Landmark: Across McDonald’s Uptown
+Hours: Open 24/7
+
+Carmen
+Address: Carmen, Cagayan de Oro
+Landmark: Across PLDT Smart
+Hours: Open 24/7
+
+Opol
+Address: Opol National Highway
+Landmark: Beside Blu Energy
+Hours: Open 24/7
+
+Macabalan
+Address: Julio Pacana St., Macabalan, Cagayan de Oro
+Landmark: Across CDO Port Departure Area
+Hours: Open 24/7
+
+
+
+
+Page 4: Products & Services
+
+Hero Section
+
+[Asset Instruction: Use a vibrant, close-up image of neatly organized store shelves featuring popular snacks and beverages.]
+
+Headline: Fully Stocked for Your Daily Needs
+Sub-headline: Quality products, local favorites, and everyday essentials available 24/7.
+
+Section 2: What We Offer
+
+[Asset Instruction: Use a grid layout with high-quality product category images.]
+
+Snacks & Beverages
+Quench your thirst and satisfy your cravings with our wide selection of cold drinks, chips, candies, and local delicacies.
+
+Everyday Groceries
+Run out of cooking oil or rice? We carry basic pantry staples to save you a trip to the supermarket.
+
+Personal Care & Household
+From toiletries to cleaning supplies, find the essentials you need to keep your home running smoothly.
+
+Local Partnerships
+We proudly feature products from local CDO entrepreneurs, bringing you unique flavors and supporting the community.
+
+
+
+
+Page 5: Careers
+
+Hero Section
+
+[Asset Instruction: Use an image of friendly C7 staff members in uniform, smiling at the counter.]
+
+Headline: Join the C7 Family
+Sub-headline: Build your career with CDO's fastest-growing convenience store chain.
+
+Section 2: Why Work With Us?
+
+[Asset Instruction: Use a clean, text-focused layout with subtle background patterns.]
+
+Body:
+At C7 Convenience Store, we believe that our employees are the heart of our business. We offer a dynamic work environment, opportunities for growth, and the chance to serve the wonderful community of Cagayan de Oro. Whether you are a recent graduate or an experienced retail professional, there is a place for you here.
+
+Section 3: Current Openings
+
+[Asset Instruction: Create an accordion or list layout for job postings.]
+
+Stockman / Salesman
+Requirements: College graduate is a plus, 18 to 30 years old, willing to work night shifts.
+
+Saleslady / Office Staff
+Requirements: College graduate is a plus, 18 to 30 years old, willing to work night shifts.
+
+CTA Button: Apply Now (Links to Contact Form or Email)
+
+
+
+
+Page 6: Contact Us
+
+Hero Section
+
+[Asset Instruction: Use a clean, minimalist background image, perhaps a subtle texture or a blurred store interior.]
+
+Headline: We Would Love to Hear From You
+Sub-headline: Have a question, feedback, or business inquiry? Get in touch with the C7 team.
+
+Section 2: Contact Information & Form
+
+[Asset Instruction: Place the contact details on the left and a functional contact form on the right.]
+
+Get in Touch
+Phone: +63 88 881 1681
+Facebook: @c7conveniencestore
+Main Office: Tomas Saco Corner 8th Street, Cagayan de Oro, Philippines
+
+Send Us a Message
+[Form Fields: Name, Email, Subject, Message, Submit Button]
+
