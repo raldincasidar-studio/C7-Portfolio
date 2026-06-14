@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "./context/cart-context";
 import { AppLayout } from "./components/layout/app-layout";
+import { FirstVisitNotice } from "./components/first-visit-notice";
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -46,6 +47,7 @@ function App() {
               <Router />
             </AppLayout>
           </WouterRouter>
+          <FirstVisitNotice />
           <Toaster />
         </TooltipProvider>
       </CartProvider>
