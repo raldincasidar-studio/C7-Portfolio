@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "t4n2LkE6jPfBQwcC7OWjJ"
@@ -60,3 +59,9 @@ id = "WaXz-TGfAB2oTQbyXAEI6"
 uri = "file://artifacts/c7-store/public/products/nova-country-cheddar-78g.png"
 type = "image"
 title = "generated_image"
+
+[[outputs]]
+id = "y8rXeOkGdCOmXmam72R_4"
+uri = "file://README.md"
+type = "text"
+title = "C7 Convenience Store — README.md"
